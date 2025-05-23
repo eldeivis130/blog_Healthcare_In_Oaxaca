@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Crisis in Rural Oaxaca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23667eea;stop-opacity:1" /><stop offset="100%" style="stop-color:%23764ba2;stop-opacity:1" /></linearGradient></defs><rect width="1000" height="600" fill="url(%23bg)"/><path d="M0,400 Q250,300 500,350 T1000,300 L1000,600 L0,600 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102,126,234,0.8), rgba(118,75,162,0.8));
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.6; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Main Content */
+        .main-content {
+            background: white;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            padding: 80px 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102,126,234,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(102,126,234,0.2);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        /* Statistics */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: scale(1.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            margin-top: 0.5rem;
+        }
+
+        /* Solution Cards */
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: linear-gradient(135deg, rgba(102,126,234,0.05), rgba(118,75,162,0.05));
+            border-radius: 25px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .solution-card:hover::before {
+            opacity: 1;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(102,126,234,0.3);
+        }
+
+        .solution-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solution-card h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solution-card p {
+            color: #64748b;
+            line-height: 1.7;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer p {
+            opacity: 0.7;
+        }
+
+        /* Interactive Elements */
+        .interactive-map {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(102,126,234,0.1), rgba(118,75,162,0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .interactive-map:hover {
+            transform: scale(1.02);
+        }
+
+        .map-content {
+            text-align: center;
+        }
+
+        .map-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .map-subtitle {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .cards-grid,
+            .solution-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Healthcare Crisis in Rural Oaxaca</h1>
+                <p class="subtitle">Addressing the urgent need for accessible healthcare in Sierra Mixe, Mixteca, and Valles Centrales</p>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.querySelector('.main-content').scrollIntoView({behavior: 'smooth'})">
+            <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Problem Overview -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">The Crisis Unveiled</h2>
+                <p class="section-subtitle">Rural communities in Oaxaca face unprecedented challenges in accessing basic healthcare services</p>
+                
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span class="stat-number">80%</span>
+                        <div class="stat-label">Community Participation Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8hrs</span>
+                        <div class="stat-label">Extended Travel Time During Rainy Season</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">1:1000</span>
+                        <div class="stat-label">Physician to Patient Ratio</div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <div class="stat-label">Main Affected Regions</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Challenges -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Key Challenges</h2>
+                <p class="section-subtitle">Understanding the multifaceted barriers to healthcare access</p>
+                
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-icon">🏔️</div>
+                        <h3>Geographic Isolation</h3>
+                        <p>Mountainous terrain and remote locations make transportation to medical facilities extraordinarily difficult, especially during the rainy season from May to October when roads become impassable.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">👩‍⚕️</div>
+                        <h3>Medical Personnel Shortage</h3>
+                        <p>Oaxaca has one of the lowest physician-to-patient ratios in Mexico, with many communities relying on a single nurse to serve thousands of people. Specialized care is virtually non-existent.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🏥</div>
+                        <h3>Equipment & Supply Deficiencies</h3>
+                        <p>Basic diagnostic tools like X-ray machines and laboratory facilities are concentrated in urban centers, leaving rural clinics with minimal capacity for proper diagnosis and treatment.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3>Economic Barriers</h3>
+                        <p>The cost of transportation to distant medical facilities, combined with lost wages, creates an impossible financial burden for many families, particularly indigenous communities.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">🗣️</div>
+                        <h3>Cultural & Linguistic Barriers</h3>
+                        <p>Many rural communities primarily speak indigenous languages rather than Spanish, creating additional barriers when accessing healthcare services in urban centers.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">⏰</div>
+                        <h3>Delayed Medical Attention</h3>
+                        <p>Late diagnosis and treatment lead to preventable complications and higher mortality rates, with maternal and infant mortality rates significantly above national averages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map Section -->
+        <section class="section">
+            <div class="container">
+                <div class="interactive-map" onclick="this.style.background='linear-gradient(135deg, rgba(102,126,234,0.2), rgba(118,75,162,0.2))'">
+                    <div class="map-content">
+                        <h3 class="map-title">Affected Regions</h3>
+                        <p class="map-subtitle">Click to explore Sierra Mixe, Mixteca, and Valles Centrales</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proposed Solutions -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Innovative Solutions</h2>
+                <p class="section-subtitle">An integrated approach to transforming healthcare delivery in rural Oaxaca</p>
+                
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <div class="solution-icon">📱</div>
+                        <h3>Comprehensive Telemedicine</h3>
+                        <p>Establishing a robust telemedicine network with high-speed internet infrastructure and diagnostic-equipped devices for community health workers, enabling real-time consultations with urban specialists and including translation services for indigenous languages.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <div class="solution-icon">🚐</div>
+                        <h3>Mobile Health Clinics</h3>
+                        <p>Deploying specially equipped four-wheel drive vehicles with portable diagnostic equipment, surgical tools, and comprehensive pharmacies, following strategic routes that maximize community access while accounting for seasonal weather patterns.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <div class="solution-icon">🤝</div>
+                        <h3>Community Engagement</h3>
+                        <p>Establishing Community Health Committees with respected leaders and traditional healers, training local members in basic health education and equipment maintenance, ensuring cultural appropriateness and local ownership of healthcare improvements.</p>
+                    </div>
+                    
+                    <div class="solution-card">
+                        <div class="solution-icon">📊</div>
+                        <h3>Pilot Program Success</h3>
+                        <p>Initial pilots in Sierra Mixe showed 80%+ community participation rates when services are accessible and culturally appropriate, with successful specialist referrals through combined telemedicine and mobile clinic approaches.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Join the Solution</h2>
+                <p class="cta-subtitle">Together, we can transform healthcare access in rural Oaxaca and create a model for communities worldwide</p>
+                <a href="#" class="cta-button" onclick="alert('Thank you for your interest! This integrated model could serve as a template for addressing similar healthcare challenges globally.')">Learn More About Getting Involved</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Rural Oaxaca Healthcare Initiative. Creating sustainable healthcare systems that respect local cultures while delivering evidence-based care.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling and animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add interactive hover effects
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-10px) scale(1)';
+            });
+        });
+
+        // Animate statistics on scroll
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const finalValue = stat.textContent;
+                const isNumber = !isNaN(parseFloat(finalValue));
+                
+                if (isNumber) {
+                    const target = parseFloat(finalValue);
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + (finalValue.includes('%') ? '%' : finalValue.includes('hrs') ? 'hrs' : '');
+                    }, 30);
+                }
+            });
+        }
+
+        // Trigger stats animation when stats section becomes visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsContainer = document.querySelector('.stats-container');
+        if (statsContainer) {
+            statsObserver.observe(statsContainer);
+        }
+
+        // Add parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
