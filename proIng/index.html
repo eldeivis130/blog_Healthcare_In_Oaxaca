@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Crisis in Rural Oaxaca - Comprehensive Analysis & Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a5c4d;
+            --secondary: #2d9b82;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --success: #28a745;
+            --warning: #ffc107;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f0f2f5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin: 30px 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        h2, h3, h4 {
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        p {
+            margin-bottom: 20px;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Emergency Banner */
+        .emergency-banner {
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 70px;
+        }
+        
+        .emergency-banner i {
+            margin-right: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            padding-top: 0;
+            margin-top: -70px;
+        }
+        
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a5c4d 0%, #2d9b82 100%);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            color: white;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-20px) translateX(-50%);}
+            60% {transform: translateY(-10px) translateX(-50%);}
+        }
+        
+        /* Statistics Dashboard */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-bottom: 5px solid var(--primary);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .stat-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Interactive Map */
+        .interactive-map {
+            background: linear-gradient(rgba(26, 92, 77, 0.9), rgba(26, 92, 77, 0.7)), url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .interactive-map:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .map-content {
+            padding: 30px;
+            z-index: 2;
+        }
+        
+        .map-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .map-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+        
+        .region-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .region-tag {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        /* Problem Analysis */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .problem-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .problem-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .impact-metrics {
+            display: flex;
+            margin-top: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            background: #e8f4f1;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+        }
+        
+        .metric-value {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        /* Timeline */
+        .timeline-container {
+            background: linear-gradient(135deg, #1a5c4d 0%, #2d9b82 100%);
+            color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: rgba(255,255,255,0.3);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 40px;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: -30px;
+            top: 20px;
+            z-index: 1;
+            color: var(--primary);
+            font-size: 1.8rem;
+            box-shadow: 0 0 0 8px rgba(255,255,255,0.2);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-icon {
+            left: -30px;
+        }
+        
+        /* Solution Showcase */
+        .solution-showcase {
+            background: linear-gradient(135deg, #2d9b82 0%, #1a5c4d 100%);
+            color: white;
+        }
+        
+        .solution-showcase .section-title,
+        .solution-showcase .section-subtitle {
+            color: white;
+        }
+        
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .solution-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .solution-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .solution-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .solution-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .solution-features {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+        
+        .solution-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .solution-features li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #a0e9d8;
+        }
+        
+        /* References Section */
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .reference-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+            transition: transform 0.3s ease;
+        }
+        
+        .reference-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .reference-source {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .reference-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .reference-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .reference-link {
+            display: inline-block;
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .reference-link:hover {
+            color: var(--primary);
+        }
+        
+        .reference-link i {
+            margin-right: 5px;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            background: linear-gradient(rgba(26, 92, 77, 0.9), rgba(26, 92, 77, 0.9)), url('https://images.unsplash.com/photo-1516549655169-df83a0774514?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .cta-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #a0e9d8;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-btn {
+            background: none;
+            border: none;
+            color: #ddd;
+            text-align: left;
+            padding: 0;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-btn:hover {
+            color: var(--secondary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 25px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        .footer-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .accessibility-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .accessibility-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Floating Actions */
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .floating-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px) rotate(90deg);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .quick-actions-menu {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .quick-actions-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .quick-actions-menu button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            color: var(--primary);
+            border: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-actions-menu button:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                height: auto;
+                padding: 100px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline::after {
+                left: 30px;
+            }
+            
+            .timeline-icon {
+                left: -30px !important;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                margin: 8px 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i> HealthOaxaca
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#problems">Challenges</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" id="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Emergency Alert Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <strong>URGENT:</strong> Rural communities in Oaxaca face critical healthcare accessibility crisis - 8+ hour emergency travel times during rainy season
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Healthcare Crisis in Rural Oaxaca</h1>
+                <p class="subtitle">Addressing the urgent need for accessible healthcare in Sierra Mixe, Mixteca, and Valles Centrales through innovative, culturally-sensitive solutions</p>
+                <div class="hero-buttons">
+                    <a href="#problems" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i> Explore the Crisis
+                    </a>
+                    <a href="#solutions" class="btn btn-secondary">
+                        <i class="fas fa-lightbulb"></i> View Solutions
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="scrollToSection('#stats')">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Statistics Dashboard -->
+        <section class="stats-dashboard section" id="stats">
+            <div class="container">
+                <h2 class="section-title">Crisis by the Numbers</h2>
+                <p class="section-subtitle">Critical healthcare accessibility statistics from rural Oaxaca regions</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card emergency">
+                        <div class="stat-icon">🚨</div>
+                        <span class="stat-number" data-target="8">0</span>
+                        <div class="stat-label">Hours Emergency Travel</div>
+                        <div class="stat-description">During rainy season to nearest hospital</div>
+                    </div>
+                    <div class="stat-card healthcare">
+                        <div class="stat-icon">👩‍⚕️</div>
+                        <span class="stat-number" data-target="1000">0</span>
+                        <div class="stat-label">Patients per Physician</div>
+                        <div class="stat-description">One of Mexico's lowest ratios</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-icon">📈</div>
+                        <span class="stat-number" data-target="80">0</span>
+                        <div class="stat-label">% Community Participation</div>
+                        <div class="stat-description">When services are accessible</div>
+                    </div>
+                    <div class="stat-card regions">
+                        <div class="stat-icon">🏔️</div>
+                        <span class="stat-number" data-target="3">0</span>
+                        <div class="stat-label">Critical Regions</div>
+                        <div class="stat-description">Sierra Mixe, Mixteca, Valles Centrales</div>
+                    </div>
+                    <div class="stat-card weather">
+                        <div class="stat-icon">🌧️</div>
+                        <span class="stat-number" data-target="6">0</span>
+                        <div class="stat-label">Months Rainy Season</div>
+                        <div class="stat-description">May-October road impassability</div>
+                    </div>
+                    <div class="stat-card mortality">
+                        <div class="stat-icon">💔</div>
+                        <span class="stat-number">Higher</span>
+                        <div class="stat-label">Mortality Rates</div>
+                        <div class="stat-description">Maternal & infant above national average</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Map -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Affected Regions</h2>
+                <div class="interactive-map" onclick="RegionMap.showDetails()">
+                    <div class="map-content">
+                        <h3 class="map-title">Rural Oaxaca Healthcare Crisis Zones</h3>
+                        <p class="map-subtitle">Click to explore the three most affected regions</p>
+                        <div class="region-list">
+                            <span class="region-tag">Sierra Mixe</span>
+                            <span class="region-tag">Mixteca</span>
+                            <span class="region-tag">Valles Centrales</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Analysis -->
+        <section class="section" id="problems">
+            <div class="container">
+                <h2 class="section-title">Multifaceted Healthcare Barriers</h2>
+                <p class="section-subtitle">Understanding the complex challenges that prevent rural communities from accessing essential healthcare services</p>
+                
+                <div class="problems-grid">
+                    <div class="problem-card geographic">
+                        <div class="problem-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Geographic & Infrastructure Challenges</h3>
+                        <p>Mountainous terrain and remote locations create extraordinary transportation difficulties. During Oaxaca's rainy season (May-October), unpaved roads become treacherous muddy paths, often completely impassable for standard vehicles.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <div class="metric-value">2-8hrs</div>
+                                <div class="metric-label">Travel Time</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">6 months</div>
+                                <div class="metric-label">Seasonal Isolation</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card personnel">
+                        <div class="problem-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <h3>Critical Personnel Shortage</h3>
+                        <p>Oaxaca has one of Mexico's lowest physician-to-patient ratios, with rural areas disproportionately affected. Many communities rely on a single nurse or community health worker to serve thousands of people.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <div class="metric-value">1 nurse</div>
+                                <div class="metric-label">Per 1000+ people</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Virtually 0</div>
+                                <div class="metric-label">Specialists</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card equipment">
+                        <div class="problem-icon">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <h3>Equipment & Supply Deficiencies</h3>
+                        <p>Basic diagnostic tools like X-ray machines, ultrasound equipment, and laboratory facilities are concentrated in urban centers, leaving rural clinics with minimal diagnostic and treatment capacity.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <div class="metric-value">Minimal</div>
+                                <div class="metric-label">Diagnostic Tools</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Advanced</div>
+                                <div class="metric-label">Disease Stages</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card economic">
+                        <div class="problem-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Economic Barriers</h3>
+                        <p>The cost of transportation to distant medical facilities, combined with lost wages from time away from work, creates insurmountable financial barriers for many rural families, particularly indigenous communities.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <div class="metric-value">High Cost</div>
+                                <div class="metric-label">Transportation</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Lost Wages</div>
+                                <div class="metric-label">Work Absence</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card cultural">
+                        <div class="problem-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>Cultural & Linguistic Barriers</h3>
+                        <p>Many rural Oaxacan communities primarily speak indigenous languages rather than Spanish, creating additional barriers when accessing healthcare services in urban centers, compounded by cultural misunderstandings.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <div class="metric-value">Indigenous</div>
+                                <div class="metric-label">Languages</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Cultural</div>
+                                <div class="metric-label">Barriers</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="problem-card delays">
+                        <div class="problem-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Delayed Medical Attention</h3>
+                        <p>Late diagnosis and treatment lead to preventable complications and higher mortality rates. Chronic diseases requiring regular monitoring become particularly dangerous, with maternal and infant mortality significantly above national averages.</p>
+                        <div class="impact-metrics">
+                            <div class="metric">
+                                <div class="metric-value">Higher</div>
+                                <div class="metric-label">Mortality</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">Preventable</div>
+                                <div class="metric-label">Complications</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-container section" id="timeline">
+            <div class="container">
+                <h2 class="section-title">Crisis Development Timeline</h2>
+                <p class="section-subtitle">How the healthcare accessibility crisis evolved and key intervention points</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon infrastructure">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Infrastructure Deterioration</h4>
+                            <p>Lack of investment in rural infrastructure led to deteriorating roads and communication networks, isolating communities from urban medical centers during critical weather periods.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon migration">
+                            <i class="fas fa-user-minus"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Medical Personnel Migration</h4>
+                            <p>Healthcare professionals increasingly concentrated in urban areas due to better working conditions and resources, leaving rural areas severely understaffed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon decline">
+                            <i class="fas fa-chart-line-down"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Health Outcomes Decline</h4>
+                            <p>Maternal and infant mortality rates began rising above national averages as preventable diseases progressed to advanced stages before treatment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon development">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Solution Development</h4>
+                            <p>Researchers and healthcare professionals began developing integrated approaches combining telemedicine, mobile clinics, and community engagement strategies.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-icon pilot">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h4>Pilot Program Launch</h4>
+                            <p>Initial pilot programs in Sierra Mixe region demonstrated 80%+ community participation rates, proving the effectiveness of accessible, culturally-appropriate healthcare delivery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Showcase -->
+        <section class="solution-showcase section" id="solutions">
+            <div class="container">
+                <h2 class="section-title light">Integrated Healthcare Delivery Model</h2>
+                <p class="section-subtitle light">Innovative, culturally-sensitive solutions transforming healthcare access in rural Oaxaca</p>
+                
+                <div class="solution-grid">
+                    <div class="solution-card telemedicine">
+                        <div class="solution-icon">
+                            <i class="fas fa-laptop-medical"></i>
+                        </div>
+                        <h3>Comprehensive Telemedicine Network</h3>
+                        <p>Establishing robust telemedicine infrastructure with high-speed internet and diagnostic-equipped devices for community health workers, enabling real-time specialist consultations.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> High-speed internet infrastructure</li>
+                            <li><i class="fas fa-check"></i> Diagnostic-equipped tablets/smartphones</li>
+                            <li><i class="fas fa-check"></i> Real-time specialist consultations</li>
+                            <li><i class="fas fa-check"></i> Indigenous language translation services</li>
+                            <li><i class="fas fa-check"></i> Culturally sensitive health education</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-card mobile">
+                        <div class="solution-icon">
+                            <i class="fas fa-truck-medical"></i>
+                        </div>
+                        <h3>Strategic Mobile Health Clinics</h3>
+                        <p>Deploying specially equipped four-wheel drive vehicles with portable diagnostic equipment, surgical tools, and comprehensive pharmacies for challenging terrain navigation.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Four-wheel drive capability</li>
+                            <li><i class="fas fa-check"></i> Portable diagnostic equipment</li>
+                            <li><i class="fas fa-check"></i> Basic surgical tools</li>
+                            <li><i class="fas fa-check"></i> Comprehensive pharmacy</li>
+                            <li><i class="fas fa-check"></i> Seasonal route optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-card community">
+                        <div class="solution-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community Engagement & Sustainability</h3>
+                        <p>Establishing Community Health Committees with respected leaders and traditional healers, ensuring local ownership and cultural appropriateness of healthcare improvements.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> Community Health Committees</li>
+                            <li><i class="fas fa-check"></i> Traditional healer integration</li>
+                            <li><i class="fas fa-check"></i> Local health worker training</li>
+                            <li><i class="fas fa-check"></i> Cultural celebration coordination</li>
+                            <li><i class="fas fa-check"></i> Local employment creation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="solution-card results">
+                        <div class="solution-icon">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <h3>Proven Pilot Program Results</h3>
+                        <p>Initial Sierra Mixe pilots showed remarkable success with 80%+ community participation when services are accessible and culturally appropriate, demonstrating model viability.</p>
+                        <ul class="solution-features">
+                            <li><i class="fas fa-check"></i> 80%+ community participation</li>
+                            <li><i class="fas fa-check"></i> Successful specialist referrals</li>
+                            <li><i class="fas fa-check"></i> Effective telemedicine integration</li>
+                            <li><i class="fas fa-check"></i> Improved health screenings</li>
+                            <li><i class="fas fa-check"></i> Enhanced follow-up care</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Section -->
+        <section class="references-section section" id="references">
+            <div class="container">
+                <h2 class="section-title">Official Sources & References</h2>
+                <p class="section-subtitle">Authoritative sources supporting our analysis and proposed solutions</p>
+                
+                <div class="references-grid">
+                    <div class="reference-card who">
+                        <div class="reference-source">World Health Organization (WHO)</div>
+                        <div class="reference-title">Universal Health Coverage in Rural and Remote Areas</div>
+                        <p class="reference-description">Comprehensive guidelines for implementing healthcare solutions in underserved rural communities worldwide.</p>
+                        <a href="https://www.who.int/news-room/fact-sheets/detail/universal-health-coverage-(uhc)" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> View Official Report
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card salud">
+                        <div class="reference-source">Mexican Ministry of Health (Secretaría de Salud)</div>
+                        <div class="reference-title">Healthcare Infrastructure in Rural Mexican Communities</div>
+                        <p class="reference-description">Official statistics and policy documents regarding healthcare accessibility in rural Mexico.</p>
+                        <a href="https://www.gob.mx/salud" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Official Health Ministry Data
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card paho">
+                        <div class="reference-source">Pan American Health Organization (PAHO)</div>
+                        <div class="reference-title">Health in the Americas: Mexico Country Profile</div>
+                        <p class="reference-description">Detailed analysis of Mexico's healthcare system challenges and opportunities.</p>
+                        <a href="https://www.paho.org/en/countries/mexico" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> PAHO Mexico Analysis
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card inegi">
+                        <div class="reference-source">National Institute of Statistics and Geography (INEGI)</div>
+                        <div class="reference-title">Oaxaca Demographic and Health Statistics</div>
+                        <p class="reference-description">Official demographic data and health statistics for Oaxaca state.</p>
+                        <a href="https://www.inegi.org.mx/" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Official Statistics
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card worldbank">
+                        <div class="reference-source">World Bank</div>
+                        <div class="reference-title">Improving Healthcare Access in Rural Mexico</div>
+                        <p class="reference-description">Development projects and funding initiatives for rural healthcare improvement.</p>
+                        <a href="https://www.worldbank.org/en/country/mexico" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> World Bank Mexico Projects
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card journal">
+                        <div class="reference-source">Journal of Global Health</div>
+                        <div class="reference-title">Telemedicine Solutions for Remote Healthcare Delivery</div>
+                        <p class="reference-description">Peer-reviewed research on telemedicine effectiveness in rural settings.</p>
+                        <a href="https://jogh.org/" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Peer-Reviewed Research
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card undp">
+                        <div class="reference-source">United Nations Development Programme</div>
+                        <div class="reference-title">Sustainable Development Goals: Health Equity</div>
+                        <p class="reference-description">UN initiatives for achieving health equity in developing countries.</p>
+                        <a href="https://www.undp.org/mexico" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> UNDP Mexico Office
+                        </a>
+                    </div>
+                    
+                    <div class="reference-card lancet">
+                        <div class="reference-source">Lancet Global Health</div>
+                        <div class="reference-title">Mobile Health Interventions in Low-Resource Settings</div>
+                        <p class="reference-description">Clinical evidence for mobile health solutions in resource-limited environments.</p>
+                        <a href="https://www.thelancet.com/journals/langlo/home" class="reference-link" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Clinical Evidence Base
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Transform Rural Healthcare</h2>
+                    <p class="cta-subtitle">Join our mission to create sustainable, culturally-sensitive healthcare systems that serve the most vulnerable communities in Oaxaca and beyond</p>
+                    <div class="cta-buttons">
+                        <button class="btn btn-primary" onclick="showModal('support')">
+                            <i class="fas fa-hands-helping"></i> Support the Initiative
+                        </button>
+                        <button class="btn btn-secondary" onclick="showModal('partner')">
+                            <i class="fas fa-handshake"></i> Become a Partner
+                        </button>
+                        <button class="btn btn-secondary" onclick="showModal('volunteer')">
+                            <i class="fas fa-heart"></i> Volunteer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About the Initiative</h3>
+                        <ul>
+                            <li><a href="#overview">Project Overview</a></li>
+                            <li><a href="#problems">Healthcare Challenges</a></li>
+                            <li><a href="#solutions">Our Solutions</a></li>
+                            <li><a href="#timeline">Implementation Timeline</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Get Involved</h3>
+                        <ul>
+                            <li><button onclick="showModal('support')" class="footer-btn">Support the Cause</button></li>
+                            <li><button onclick="showModal('partner')" class="footer-btn">Partnership Opportunities</button></li>
+                            <li><button onclick="showModal('volunteer')" class="footer-btn">Volunteer Programs</button></li>
+                            <li><button onclick="showModal('donate')" class="footer-btn">Make a Donation</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#references">Official References</a></li>
+                            <li><button onclick="showModal('research')" class="footer-btn">Research Papers</button></li>
+                            <li><button onclick="showEmergencyContacts()" class="footer-btn">Emergency Contacts</button></li>
+                            <li><button onclick="showModal('newsletter')" class="footer-btn">Newsletter Signup</button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h3>Contact Information</h3>
+                        <ul>
+                            <li><a href="mailto:info@healthoaxaca.org">info@healthoaxaca.org</a></li>
+                            <li><a href="tel:+52-951-XXX-XXXX">+52 (951) XXX-XXXX</a></li>
+                            <li>Oaxaca City, Oaxaca, Mexico</li>
+                            <li><button onclick="shareOnSocial('twitter')" class="footer-btn">Share on Social Media</button></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Rural Oaxaca Healthcare Initiative. Creating sustainable healthcare systems that respect local cultures while delivering evidence-based care.</p>
+                    <div class="footer-actions">
+                        <button onclick="toggleHighContrast()" class="accessibility-btn" title="Toggle High Contrast">
+                            <i class="fas fa-adjust"></i>
+                        </button>
+                        <button onclick="increaseTextSize()" class="accessibility-btn" title="Increase Text Size">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button onclick="decreaseTextSize()" class="accessibility-btn" title="Decrease Text Size">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Quick Actions Floating Button -->
+    <div class="floating-actions">
+        <button class="floating-btn" onclick="toggleQuickActions()" id="quick-actions-btn">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="quick-actions-menu" id="quick-actions-menu">
+            <button onclick="showEmergencyContacts()" title="Emergency Contacts">
+                <i class="fas fa-phone-alt"></i>
+            </button>
+            <button onclick="showModal('feedback')" title="Submit Feedback">
+                <i class="fas fa-comment"></i>
+            </button>
+            <button onclick="shareOnSocial('twitter')" title="Share">
+                <i class="fas fa-share-alt"></i>
+            </button>
+            <button onclick="showModal('resources')" title="Resources">
+                <i class="fas fa-book"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+        
+        // Scroll to section
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Statistics Counter Animation
+        function animateStats() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = +stat.getAttribute('data-target');
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        stat.textContent = Math.ceil(current);
+                    }
+                }, 16);
+            });
+        }
+        
+        // Check when stats are in viewport
+        const statsSection = document.getElementById('stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+        
+        // Modal Functions
+        function showModal(type) {
+            const modal = document.getElementById('modal');
+            const modalBody = document.getElementById('modal-body');
+            let content = '';
+            
+            switch(type) {
+                case 'support':
+                    content = `
+                        <h2>Support Our Initiative</h2>
+                        <p>Your support can help us bring healthcare to remote communities in Oaxaca. Choose how you'd like to contribute:</p>
+                        <div class="modal-options">
+                            <button class="btn btn-primary">Make a Donation</button>
+                            <button class="btn btn-secondary">Become a Monthly Supporter</button>
+                            <button class="btn btn-secondary">Sponsor a Mobile Clinic</button>
+                        </div>
+                    `;
+                    break;
+                case 'partner':
+                    content = `
+                        <h2>Partnership Opportunities</h2>
+                        <p>Join our network of partners working to improve healthcare access in rural Mexico.</p>
+                        <form>
+                            <div class="form-group">
+                                <label>Organization Name</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Contact Email</label>
+                                <input type="email">
+                            </div>
+                            <div class="form-group">
+                                <label>How would you like to partner with us?</label>
+                                <textarea rows="4"></textarea>
+                            </div>
+                            <button class="btn btn-primary">Submit Partnership Request</button>
+                        </form>
+                    `;
+                    break;
+                case 'volunteer':
+                    content = `
+                        <h2>Volunteer With Us</h2>
+                        <p>Join our team of healthcare professionals, community workers, and support staff making a difference in Oaxaca.</p>
+                        <div class="volunteer-roles">
+                            <h3>Available Roles</h3>
+                            <ul>
+                                <li>Medical Professionals (Doctors, Nurses)</li>
+                                <li>Community Health Workers</li>
+                                <li>Translators (Spanish/Indigenous Languages)</li>
+                                <li>Logistics Coordinators</li>
+                                <li>Technical Support Specialists</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary">Apply to Volunteer</button>
+                    `;
+                    break;
+                default:
+                    content = `<h2>More Information</h2><p>Please check back soon for more details.</p>`;
+            }
+            
+            modalBody.innerHTML = content;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Quick Actions Toggle
+        function toggleQuickActions() {
+            const menu = document.getElementById('quick-actions-menu');
+            menu.classList.toggle('active');
+        }
+        
+        // Accessibility Functions
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+        
+        function increaseTextSize() {
+            const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+            document.body.style.fontSize = (currentSize + 2) + 'px';
+        }
+        
+        function decreaseTextSize() {
+            const currentSize = parseFloat(getComputedStyle(document.body).fontSize);
+            if (currentSize > 12) {
+                document.body.style.fontSize = (currentSize - 2) + 'px';
+            }
+        }
+        
+        // Show emergency contacts
+        function showEmergencyContacts() {
+            alert('Emergency Contacts:\n\n- Oaxaca Health Services: +52 951 123 4567\n- National Emergency: 911\n- Rural Health Hotline: 01 800 123 4567');
+        }
+        
+        // Share on social media
+        function shareOnSocial(platform) {
+            const url = encodeURIComponent(window.location.href);
+            let shareUrl = '';
+            
+            switch(platform) {
+                case 'twitter':
+                    shareUrl = `https://twitter.com/intent/tweet?text=Learn%20about%20the%20healthcare%20crisis%20in%20rural%20Oaxaca%20and%20how%20to%20help&url=${url}`;
+                    break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'linkedin':
+                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=Healthcare%20Crisis%20in%20Rural%20Oaxaca`;
+                    break;
+            }
+            
+            if (shareUrl) {
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            }
+        }
+        
+        // Initialize on load
+        window.addEventListener('load', () => {
+            // Close any open modals
+            closeModal();
+        });
+    </script>
+</body>
+</html>
